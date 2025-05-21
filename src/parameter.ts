@@ -20,6 +20,7 @@ function slope(samples: Samples): number {
   return gradient;
 }
 
+/** Properties of an exported parameter */
 export type ParameterData = {
   name: string;
   min: number;
@@ -27,6 +28,7 @@ export type ParameterData = {
   value: number;
 };
 
+/** Parameter is a floating point value that can be adjusted */
 export class Parameter {
   /** Amount value has changed */
   public changed: number = 0;
@@ -119,7 +121,7 @@ export class Parameter {
   }
 }
 
-/** Integer Value */
+/** Parameter where value is integer */
 export class IntegerParameter extends Parameter {
   public override get value(): number {
     return Math.round(this._value);
@@ -134,7 +136,7 @@ export class IntegerParameter extends Parameter {
   }
 }
 
-/** Value is not changable */
+/** Parameter where value is not adjustable */
 export class StaticParameter extends Parameter {
   constructor(name: string, value: number) {
     super(name, value, value, value);
@@ -169,4 +171,5 @@ export class StaticParameter extends Parameter {
   }
 }
 
+/** An array of variuos parameters */
 export type Parameters = Array<Parameter>;
