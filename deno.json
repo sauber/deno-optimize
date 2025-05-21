@@ -1,4 +1,8 @@
 {
+  "name": "@sauber/optimize",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./mod.ts",
   "imports": {
     "@sauber/ml-cli-dashboard": "jsr:@sauber/ml-cli-dashboard@^0.6.1",
     "@sauber/statistics": "jsr:@sauber/statistics@^0.4.0",
