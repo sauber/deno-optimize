@@ -1,6 +1,6 @@
 import type { Parameters } from "./parameter.ts";
 
-interface Optimizer {
+export interface Optimizer {
   // Calculate update from gradient
   update: (grad: number) => number;
 }
