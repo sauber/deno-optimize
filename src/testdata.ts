@@ -20,7 +20,7 @@ export function ThreeHumpCamel(input: Inputs): Output {
   const term2 = -1.05 * x1 ** 4;
   const term3 = x1 ** 6 / 6;
   const term4 = x1 * x2;
-  const term5 = x2 ^ 2;
+  const term5 = x2 ** 2;
   const y = term1 + term2 + term3 + term4 + term5;
   return y;
 }
