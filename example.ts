@@ -1,15 +1,3 @@
-# deno-optimize
-
-Using ADAM (short for Adaptive Moment Estimation) to identify optimimal values
-for set of parameters.
-
-Progress of optimization can be displayed in terminal dashboard.
-
-## Examples
-
-Here is a complete example of defining and agent, input parameters, dashboard and running the optimization process.
-
-```typescript
 /**
  * Example of searching for optimal input parameters to find maximum output.
  */
@@ -102,5 +90,3 @@ y -2 [============= -0.007      ] 2 ‖ 0.00 ┤╰─────────�
 Found minimum after 1521 iterations. Input: [ -0.107, -0.007 ] Output: 0.023558616540675304
 deno-optimize>
 */
-```
-
