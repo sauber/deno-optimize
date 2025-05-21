@@ -1,4 +1,4 @@
-import { Parameters } from "./parameter.ts";
+import type { Parameters } from "./parameter.ts";
 
 interface Optimizer {
   // Calculate update from gradient

@@ -1,6 +1,6 @@
-import { Parameters } from "./parameter.ts";
+import type { Parameters } from "./parameter.ts";
 import { sum } from "@sauber/statistics";
-import { Inputs, Output, Status } from "./types.d.ts";
+import type { Inputs, Output, Status } from "./types.d.ts";
 
 export abstract class Optimizer {
   /** Set of parameters to optimize */

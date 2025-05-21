@@ -3,10 +3,10 @@ import { Dashboard } from "./dashboard.ts";
 import {
   IntegerParameter,
   Parameter,
-  Parameters,
+  type Parameters,
   StaticParameter,
 } from "./parameter.ts";
-import { delay } from "jsr:@std/async/delay";
+import { delay } from "@std/async/delay";
 
 Deno.test("Instance", () => {
   assertInstanceOf(new Dashboard(), Dashboard);

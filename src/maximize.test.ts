@@ -7,8 +7,8 @@ import {
 import { Dashboard } from "./dashboard.ts";
 import { Maximize } from "./maximize.ts";
 import { Parameter } from "./parameter.ts";
-import { Inputs, NoisyBumpySlope, Output } from "./testdata.ts";
-import { Status } from "./types.d.ts";
+import { type Inputs, NoisyBumpySlope, type Output } from "./testdata.ts";
+import type { Status } from "./types.d.ts";
 
 Deno.test("Instance", () => {
   const min = new Maximize();

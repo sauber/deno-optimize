@@ -11,7 +11,7 @@ import {
 import {
   IntegerParameter,
   Parameter,
-  ParameterData,
+  type ParameterData,
   StaticParameter,
 } from "./parameter.ts";
 

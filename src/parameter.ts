@@ -1,4 +1,4 @@
-import { randn } from "jsr:@sauber/statistics";
+import { randn } from "@sauber/statistics";
 import { Adam } from "./adam.ts";
 
 type Sample = [number, number];

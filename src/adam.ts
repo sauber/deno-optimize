@@ -1,4 +1,4 @@
-import { Optimizer } from "./types.d.ts";
+import type { Optimizer } from "./types.d.ts";
 
 /** Adaptive Moment Estimation */
 export class Adam implements Optimizer {

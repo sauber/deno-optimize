@@ -1,7 +1,7 @@
-import { Parameter, Parameters } from "./parameter.ts";
+import type { Parameter, Parameters } from "./parameter.ts";
 import { Line } from "./line.ts";
 import { Iteration } from "@sauber/ml-cli-dashboard";
-import { Output } from "./types.d.ts";
+import type { Output } from "./types.d.ts";
 import { plot } from "asciichart";
 import { downsample } from "@sauber/statistics";
 
