@@ -2,7 +2,7 @@ import type { Parameters } from "./parameter.ts";
 import { sum } from "@sauber/statistics";
 import type { Inputs, Output, Status } from "./types.d.ts";
 
-export abstract class Optimizer {
+export abstract class Optimize {
   /** Set of parameters to optimize */
   public readonly parameters: Parameters = [];
 
@@ -30,7 +30,7 @@ export abstract class Optimizer {
   /** Direction for learning (+1 for maximize, -1 for minimize) */
   protected abstract direction: number;
 
-  constructor(params: Partial<Optimizer> = {}) {
+  constructor(params: Partial<Optimize> = {}) {
     Object.assign(this, params);
   }
 

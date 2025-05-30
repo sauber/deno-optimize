@@ -16,8 +16,8 @@ Deno.test("Instance", () => {
 });
 
 Deno.test("Run", () => {
-  const min = new Maximize();
-  const iterations = min.run();
+  const max = new Maximize();
+  const iterations = max.run();
   assertEquals(iterations, 1);
 });
 
