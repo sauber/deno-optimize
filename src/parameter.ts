@@ -51,6 +51,11 @@ export class Parameter {
     public readonly max: number,
     value?: number,
   ) {
+    if (value !== undefined && (value < min || value > max)) {
+      throw new Error(
+        `Parameter ${name} value ${value} out of bounds [${min}, ${max}]`,
+      );
+    }
     this._value = value || this.random;
   }
 
