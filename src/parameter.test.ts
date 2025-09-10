@@ -40,6 +40,25 @@ Deno.test("Export", () => {
   assertEquals(e, { name, min, max, value });
 });
 
+Deno.test("Clone", () => {
+  const min = 5;
+  const max = 10;
+  const name = "MyParm";
+  const p = new Parameter(name, min, max);
+  const newValue = 7;
+  const clone = p.clone(7);
+  assertEquals(clone.name, name);
+  assertEquals(clone.value, newValue);
+  assertInstanceOf(clone, Parameter);
+});
+
+Deno.test("Suggest", () => {
+  const p = new Parameter("", 5, 10);
+  const s: number = p.suggest();
+  assertGreaterOrEqual(s, p.value - 1);
+  assertLessOrEqual(s, p.value + 1);
+});
+
 Deno.test("Min / Max", () => {
   const min = 5;
   const max = 10;

@@ -51,11 +51,24 @@ export class Parameter {
     public readonly max: number,
     value?: number,
   ) {
+    if (value !== undefined && (value < min || value > max)) {
+      throw new Error(
+        `Parameter ${name} value ${value} out of bounds [${min}, ${max}]`,
+      );
+    }
     this._value = value || this.random;
   }
 
+  /** Create instance from values */
   public static import(par: ParameterData): Parameter {
     return new Parameter(par.name, par.min, par.max, par.value);
+  }
+
+  /** Clone parameter with new value */
+  public clone(value: number): this {
+    const cloned: this = Object.create(this);
+    cloned.set(value);
+    return cloned;
   }
 
   public export(): ParameterData {
@@ -123,6 +136,10 @@ export class Parameter {
 
 /** Parameter where value is integer */
 export class IntegerParameter extends Parameter {
+  public static override import(par: ParameterData): IntegerParameter {
+    return new IntegerParameter(par.name, par.min, par.max, par.value);
+  }
+
   public override get value(): number {
     return Math.round(this._value);
   }
@@ -140,6 +157,10 @@ export class IntegerParameter extends Parameter {
 export class StaticParameter extends Parameter {
   constructor(name: string, value: number) {
     super(name, value, value, value);
+  }
+
+  public static override import(par: ParameterData): StaticParameter {
+    return new StaticParameter(par.name, par.min);
   }
 
   public override get value(): number {
