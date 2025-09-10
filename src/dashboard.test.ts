@@ -24,8 +24,8 @@ Deno.test("Render", { ignore: false }, async () => {
     new Parameter("Negative", -10, -5, -7),
     new Parameter(
       "Random",
-      -1 - Math.random(),
-      1 + Math.random(),
+      -1 - Number(Math.random().toPrecision(2)),
+      1 + Number(Math.random().toPrecision(2)),
       Math.random() - 0.5,
     ),
     new StaticParameter("Static", 0.5),
