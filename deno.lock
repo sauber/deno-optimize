@@ -1,30 +1,51 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@sauber/block-image@^2.0.3": "2.0.3",
+    "jsr:@sauber/ml-cli-dashboard@~0.6.1": "0.6.1",
     "jsr:@sauber/statistics@0.4": "0.4.0",
     "jsr:@sauber/statistics@0.5": "0.5.0",
-    "jsr:@sauber/widgets@~0.1.4": "0.1.4",
+    "jsr:@sauber/widgets@0.2": "0.2.0",
     "jsr:@std/assert@^1.0.13": "1.0.13",
     "jsr:@std/async@*": "1.0.13",
     "jsr:@std/async@^1.0.13": "1.0.13",
     "jsr:@std/cli@^1.0.22": "1.0.22",
+    "jsr:@std/datetime@0.224": "0.224.5",
+    "jsr:@std/fmt@0.224": "0.224.0",
     "jsr:@std/fmt@^1.0.8": "1.0.8",
     "jsr:@std/internal@^1.0.6": "1.0.7",
+    "npm:asciichart@^1.5.25": "1.5.25",
     "npm:cli-truncate@5": "5.0.0"
   },
   "jsr": {
+    "@sauber/block-image@2.0.3": {
+      "integrity": "9b95587401695d49c9a6d92bcf3e946d4729dcc5fafe88cea230379775accac6",
+      "dependencies": [
+        "jsr:@std/fmt@0.224"
+      ]
+    },
+    "@sauber/ml-cli-dashboard@0.6.1": {
+      "integrity": "6cce95b086d5807e12702f8ee0f1950006b6b5aae154dd192161f12bdf36dc6e",
+      "dependencies": [
+        "jsr:@sauber/block-image",
+        "jsr:@sauber/statistics@0.4",
+        "jsr:@std/datetime",
+        "jsr:@std/fmt@0.224",
+        "npm:asciichart"
+      ]
+    },
     "@sauber/statistics@0.4.0": {
       "integrity": "b9121713a29dd8d9030ec93d35a3231060083d831dd51511829c08aa36deeba1"
     },
     "@sauber/statistics@0.5.0": {
       "integrity": "c4a6801b4beb657a33bc65ff4c635a9287809bca517283b500428264599be0b3"
     },
-    "@sauber/widgets@0.1.4": {
-      "integrity": "a6343764b53fa01950d4f0c60774ebe1149121816ce54c5a2e42e84c73b2acbf",
+    "@sauber/widgets@0.2.0": {
+      "integrity": "7d2c44a22245a39e62a978c85a73a5247e2d49ceea727db83425f1baa4a7acf3",
       "dependencies": [
         "jsr:@sauber/statistics@0.5",
         "jsr:@std/cli",
-        "jsr:@std/fmt",
+        "jsr:@std/fmt@^1.0.8",
         "npm:cli-truncate"
       ]
     },
@@ -40,6 +61,12 @@
     "@std/cli@1.0.22": {
       "integrity": "50d1e4f87887cb8a8afa29b88505ab5081188f5cad3985460c3b471fa49ff21a"
     },
+    "@std/datetime@0.224.5": {
+      "integrity": "363fca6e2e46c1e85139c10ba77745d25c0936abd112b8bfdc9b8fc3615added"
+    },
+    "@std/fmt@0.224.0": {
+      "integrity": "e20e9a2312a8b5393272c26191c0a68eda8d2c4b08b046bad1673148f1d69851"
+    },
     "@std/fmt@1.0.8": {
       "integrity": "71e1fc498787e4434d213647a6e43e794af4fd393ef8f52062246e06f7e372b7"
     },
@@ -53,6 +80,9 @@
     },
     "ansi-styles@6.2.3": {
       "integrity": "sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg=="
+    },
+    "asciichart@1.5.25": {
+      "integrity": "sha512-PNxzXIPPOtWq8T7bgzBtk9cI2lgS4SJZthUHEiQ1aoIc3lNzGfUvIvo9LiAnq26TACo9t1/4qP6KTGAUbzX9Xg=="
     },
     "cli-truncate@5.0.0": {
       "integrity": "sha512-ds7u02fPOOBpcUl2VSjLF3lfnAik9u7Zt0BTaaAQlT5RtABALl4cvpJHthXx+rM50J4gSfXKPH5Tix/tfdefUQ==",
@@ -94,8 +124,8 @@
   "workspace": {
     "dependencies": [
       "jsr:@sauber/ml-cli-dashboard@~0.6.1",
-      "jsr:@sauber/statistics@0.4",
-      "jsr:@sauber/widgets@~0.1.4",
+      "jsr:@sauber/statistics@0.5",
+      "jsr:@sauber/widgets@0.2",
       "jsr:@std/assert@^1.0.13",
       "jsr:@std/async@^1.0.13"
     ]
