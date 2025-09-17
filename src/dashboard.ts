@@ -1,6 +1,7 @@
 import type { Parameters } from "./parameter.ts";
 import type { Output } from "./types.d.ts";
 import {
+  Frame,
   gauges as gauge_chart,
   LineChart,
   linechart,
@@ -52,8 +53,10 @@ export class Dashboard {
     iteration: number,
     reward: Array<Output>,
   ): string {
+    // const separator = " ‖ ";
+
     // Get each component
-    const width: number = Math.floor((this.width - 3) / 2);
+    const width: number = Math.floor((this.width -4) / 2);
     const height: number = parameters.length;
     const gauges: string = this.gauges(parameters, width);
     const spentms = Date.now() - this.startms;
@@ -64,16 +67,15 @@ export class Dashboard {
       this.width,
     );
 
-    // Vertical Seperator
-    const seperator: string = Array(height).fill(" ‖ ").join("\n");
-
     // Create Dashboard
     const gb = new Static(gauges, width);
     const lc = new LineChart(reward, height);
-    const sep = new Static(seperator);
     lc.setWidth(width);
     const db = new Stack([
-      new Split([gb, sep, lc]),
+      new Split([
+        new Frame(gb, "Parameters"),
+        new Frame(lc, "Reward"),
+      ]),
 
       new Static(eta),
     ]);
