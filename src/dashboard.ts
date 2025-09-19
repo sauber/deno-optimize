@@ -48,7 +48,7 @@ export class Dashboard {
     this.progress = new Progress("#", max_iterations, width);
 
     this.layout = new Stack([
-      new Split([new Frame(this.gauges), new Frame(this.chart)]),
+      new Split([new Frame(this.gauges, "Parameters"), new Frame(this.chart, "Results")]),
       this.progress,
     ]);
   }

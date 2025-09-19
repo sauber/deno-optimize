@@ -41,7 +41,7 @@ const epochs = 20000;
 const width = 74;
 
 // Dashboard to visualize the optimization process.
-const dashboard = new Dashboard(epochs, width);
+const dashboard = new Dashboard(parameters, epochs, width);
 
 // Callback to render the dashboard.
 const status: Status = (
@@ -50,7 +50,7 @@ const status: Status = (
   _parameters: Parameters,
   loss: Array<Output>,
 ): void => {
-  console.log(dashboard.render(parameters, iteration, loss));
+  console.log(dashboard.render(iteration, loss));
 };
 
 // Frequency of callbacks
