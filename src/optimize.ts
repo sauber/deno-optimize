@@ -25,7 +25,7 @@ export abstract class Optimize {
   public readonly batchSize: number = 16;
 
   /** History of loss */
-  protected history: Array<Output> = [];
+  public history: Array<Output> = [];
 
   /** Direction for learning (+1 for maximize, -1 for minimize) */
   protected abstract direction: number;
