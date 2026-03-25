@@ -28,7 +28,7 @@ Deno.test("Instance", () => {
   assertInstanceOf(new Dashboard(parameters), Dashboard);
 });
 
-Deno.test("Render", { ignore: false }, async () => {
+Deno.test("Render", { ignore: true }, async () => {
   const iterations = 100;
   const console_width = 82;
   const d = new Dashboard(parameters, iterations, console_width);

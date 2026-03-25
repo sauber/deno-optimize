@@ -30,6 +30,10 @@ export abstract class Optimize {
   /** Direction for learning (+1 for maximize, -1 for minimize) */
   protected abstract direction: number;
 
+  /** Best set of parameter values seen */
+  protected best_score: number = -Infinity;
+  public best_inputs: Inputs = [];
+
   constructor(params: Partial<Optimize> = {}) {
     Object.assign(this, params);
   }
@@ -52,9 +56,16 @@ export abstract class Optimize {
     this.parameters.forEach((p) => p.update());
 
     // Calculate current loss
-    const best: Inputs = this.parameters.map((p) => p.value);
-    const loss: Output = this.agent(best);
+    const inputs: Inputs = this.parameters.map((p) => p.value);
+    const loss: Output = this.agent(inputs);
     this.history.push(loss);
+
+    // Make a snapshot of parameter values, if loss is best seen so far
+    const score = this.direction * loss;
+    if (score > this.best_score) {
+      this.best_score = score;
+      this.best_inputs = inputs;
+    }
 
     // Total of gradients (before value update)
     const momentum = Math.sqrt(sum(this.parameters.map((p) => p.changed ** 2)));

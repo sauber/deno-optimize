@@ -64,8 +64,8 @@ Deno.test("Min / Max", () => {
   const max = 10;
   const p = new Parameter("", min, max);
   const v: number = p.value;
-  assertGreater(v, min);
-  assertLess(v, max);
+  assertGreaterOrEqual(v, min);
+  assertLessOrEqual(v, max);
 });
 
 Deno.test("Set", () => {

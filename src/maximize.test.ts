@@ -66,5 +66,9 @@ Deno.test(
     console.log(parameters.map((p) => p.print()));
     assertGreater(iterations, 0);
     assertLessOrEqual(iterations, epochs);
+
+    // Confirm best parameters
+    const best: Inputs = optimizer.best_inputs as Inputs;
+    console.log({ best });
   },
 );
