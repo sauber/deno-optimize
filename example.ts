@@ -46,11 +46,11 @@ const dashboard = new Dashboard(parameters, epochs, width);
 // Callback to render the dashboard.
 const status: Status = (
   iteration: number,
-  _momentum: number,
+  momentum: number,
   _parameters: Parameters,
   loss: Array<Output>,
 ): void => {
-  console.log(dashboard.render(iteration, loss));
+  console.log(dashboard.render(iteration, loss, momentum));
 };
 
 // Frequency of callbacks
