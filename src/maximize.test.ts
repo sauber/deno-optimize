@@ -39,11 +39,11 @@ Deno.test(
 
     const status: Status = (
       iteration: number,
-      _momentum: number,
+      momentum: number,
       _parameters,
       loss: Array<Output>,
     ): void => {
-      console.log(dashboard.render(iteration, loss));
+      console.log(dashboard.render(iteration, loss, momentum));
     };
 
     const optimizer = new Maximize({

@@ -33,14 +33,14 @@ Deno.test("Render", { ignore: true }, async () => {
   const console_width = 82;
   const d = new Dashboard(parameters, iterations, console_width);
   const loss: Array<number> = [];
-  const chart: string = d.render(0, loss);
+  const chart: string = d.render(0, loss, 0);
   console.log(chart);
 
   for (let i = 1; i <= iterations; i++) {
     await delay(20); // wait
     parameters.forEach((p) => p.set(p.suggest()));
     loss.push(Math.random());
-    const update: string = d.render(i, loss);
+    const update: string = d.render(i, loss, 0);
     console.log(update);
   }
 });

@@ -50,14 +50,14 @@ export class Dashboard {
 
     this.progress = new Progress("#", max_iterations, width);
 
-    this.momentum = new TextLine("0");
+    this.momentum = new TextLine("Momentum:");
 
     this.layout = new Stack([
       new Split([
         new Frame(this.gauges, "Parameters"),
         new Frame(this.chart, "Results"),
       ]),
-      new Split([new Static("Momentum:"), this.momentum]),
+      this.momentum,
       this.progress,
     ]);
   }
@@ -71,7 +71,7 @@ export class Dashboard {
     this.gauges.update(this.parameters.map((p) => p.value));
     this.chart.update(reward);
     this.progress.update(iteration);
-    this.momentum.update(momentum.toFixed(4));
+    this.momentum.update("Momentum: " + momentum.toFixed(3));
 
     // Moving cursor up
     const up: string = this.first
